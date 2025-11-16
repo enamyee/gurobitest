@@ -162,6 +162,8 @@ void solveIterativeFixing(int V, const vector<array<int, 4>>& edges, const vecto
             total_cost += edges[e][2];
         }
         cout << "Total cost = " << total_cost << "\n";
+        cout << "최대 단말 간 경로 길이 (L*) = " << L.get(GRB_DoubleAttr_X) << "\n";
+
 
     }
     catch (GRBException& e) {
