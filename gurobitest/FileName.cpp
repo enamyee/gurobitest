@@ -146,7 +146,7 @@ void solveIterativeFixing(int V, const vector<array<int, 4>>& edges, const vecto
                 }
             }
 
-            if (max_e == -1 || max_val < 1e-6) break;
+            if (max_e == -1) break;
 
             x[max_e].set(GRB_DoubleAttr_LB, 1.0);
             fixed_edges.push_back(max_e);
