@@ -100,13 +100,7 @@ void solveIterativeFixing(int V, const vector<array<int, 4>>& edges,
             for (int a = 0; a < A; a++)
                 model.addConstr(f[k][a] <= x[arc_edge[a]]);
 
-        for (int e = 0; e < E; e++) {
-            GRBLinExpr total_flow = 0;
-            for (int k = 0; k < K; k++) {
-                total_flow += f[k][2 * e] + f[k][2 * e + 1];
-            }
-            model.addConstr(total_flow <= x[e]);
-        }
+        
 
         GRBLinExpr budget = 0;
         for (int e = 0; e < E; e++) budget += edges[e][2] * x[e];
